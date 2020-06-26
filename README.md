@@ -1,12 +1,12 @@
-# LMS
-Library Management System
+# LMS ** Library Management System **
 
-Problem
+
+**Problem**
 
 Making easy to control Library Management System. Use cases are user must able to borrow book,add
 book,delete book, update book, search book with any field.
 
-Solution
+**Solution**
 
 Windows desktop application with using Visual Studio's Windows Form Application. Database choose for this
 project is NoSQL based MongoDB. Clean user interface with using Material Design princibles.
