@@ -21,6 +21,3 @@ project is NoSQL based MongoDB. Clean user interface with using Material Design 
 - Update Book
 
 **Screenshots**
-
-![Borrow](https://drive.google.com/file/d/10ICMow16pQ9tRgDNl281wgNjB3WisrLW/view "Borrow A Book")
-
