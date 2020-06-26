@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E39226C4-AAC9-4FD2-A4B8-02D88C0F638F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LMS_160706300</RootNamespace>
+    <AssemblyName>LMS_160706300</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Crc32C.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crc32C.NET.1.0.5.0\lib\net20\Crc32C.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.3.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.3.1\lib\net471\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.10.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.10.3\lib\net452\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.10.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.10.3\lib\net452\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.10.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.10.3\lib\net452\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Legacy, Version=2.10.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.2.10.3\lib\net452\MongoDB.Driver.Legacy.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.0.0\lib\net452\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="NUnitForms, Version=1.3.1771.29165, Culture=neutral, PublicKeyToken=9df516afcc0d4103">
+      <HintPath>..\packages\NUnitForms.Framework.1.3.1\lib\NUnitForms.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.23.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.23.0\lib\net45\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappy.NET, Version=1.1.1.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappy.NET.1.1.1.8\lib\net45\Snappy.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Superintend.cs" />
+    <Compile Include="Menus\AddIntoLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\AddIntoLibrary.Designer.cs">
+      <DependentUpon>AddIntoLibrary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\BookBorrowers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\BookBorrowers.Designer.cs">
+      <DependentUpon>BookBorrowers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\BorrowFromLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\BorrowFromLibrary.Designer.cs">
+      <DependentUpon>BorrowFromLibrary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\DeleteFromLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\DeleteFromLibrary.Designer.cs">
+      <DependentUpon>DeleteFromLibrary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\DatabaseOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\DatabaseOperations.Designer.cs">
+      <DependentUpon>DatabaseOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\HomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\HomeScreen.Designer.cs">
+      <DependentUpon>HomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Books.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Books.Designer.cs">
+      <DependentUpon>Books.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\ReportScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\ReportScreen.Designer.cs">
+      <DependentUpon>ReportScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\SearchFromLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\SearchFromLibrary.Designer.cs">
+      <DependentUpon>SearchFromLibrary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\SignUpScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\SignUpScreen.Designer.cs">
+      <DependentUpon>SignUpScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\UpdateFromLibrary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\UpdateFromLibrary.Designer.cs">
+      <DependentUpon>UpdateFromLibrary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\MongoDBOperations.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserNestedFields.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Menus\AddIntoLibrary.resx">
+      <DependentUpon>AddIntoLibrary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\BookBorrowers.resx">
+      <DependentUpon>BookBorrowers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\BorrowFromLibrary.resx">
+      <DependentUpon>BorrowFromLibrary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\DeleteFromLibrary.resx">
+      <DependentUpon>DeleteFromLibrary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\DatabaseOperations.resx">
+      <DependentUpon>DatabaseOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\HomeScreen.resx">
+      <DependentUpon>HomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\Books.resx">
+      <DependentUpon>Books.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\ReportScreen.resx">
+      <DependentUpon>ReportScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\SearchFromLibrary.resx">
+      <DependentUpon>SearchFromLibrary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\SignUpScreen.resx">
+      <DependentUpon>SignUpScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\UpdateFromLibrary.resx">
+      <DependentUpon>UpdateFromLibrary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addbook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updatebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginuser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borrowedbook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lmsbackground1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lmBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refreshpage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.0.0\build\MongoDB.Libmongocrypt.targets'))" />
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>
